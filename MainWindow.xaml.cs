@@ -33,6 +33,7 @@ namespace MusicPlayer
 
         MediaPlayer player;
         MusicState state = MusicState.NONE;
+        bool DoNotSeek = false;
         public MainWindow()
         {
             player = new MediaPlayer();
@@ -48,12 +49,15 @@ namespace MusicPlayer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            DoNotSeek = true;
             TimeSlider.Value = player.Position.TotalMilliseconds;
+            DoNotSeek = false;
         }
 
         private void SeekPosition(object? sender, EventArgs e)
         {
-            player.Position = TimeSpan.FromMilliseconds((int)TimeSlider.Value);
+            if(!DoNotSeek)
+                player.Position = TimeSpan.FromMilliseconds((int)TimeSlider.Value);
         }
 
         private void Player_MediaOpened(object? sender, EventArgs e)
