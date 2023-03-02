@@ -5,7 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicPlayer"
         mc:Ignorable="d"
-        Title="Download Song (Youtube)" Height="Auto" Width="270">
+        Title="Download Song (Youtube)" Height="113" Width="270"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="DockPanel">
+            <Setter Property="Background" Value="#333"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#333"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#EEE"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#EEE"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#444"/>
+            <Setter Property="Foreground" Value="#EEE"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="6"/>
+        </Style>
+        <Style TargetType="Slider">
+            <Setter Property="Background" Value="#222"/>
+        </Style>
+        <Style TargetType="ScrollViewer">
+            <Setter Property="Background" Value="#222"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#222"/>
+            <Setter Property="Foreground" Value="#EEE"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,10 +53,10 @@
                  Grid.ColumnSpan="2" Grid.Row="1"
                  Name="UrlBox"></TextBox>
         <Button Grid.Row="2" Margin="8" HorizontalAlignment="Right"
-                Height="20" VerticalAlignment="Bottom"
+                Height="auto" VerticalAlignment="Bottom"
                 Width="50" Click="Ok_Click">Ok</Button>
         <Button Grid.Row="2" Grid.Column="1" Margin="8" HorizontalAlignment="Right"
-                Height="20" VerticalAlignment="Bottom" Width="50"
+                Height="auto" VerticalAlignment="Bottom" Width="50"
                 Click="Cancel_Click">Cancel</Button>
     </Grid>
 </Window>
